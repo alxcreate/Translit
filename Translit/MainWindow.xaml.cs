@@ -53,18 +53,25 @@ namespace Transliteration
                     string translit = translitMap[char.ToLower(c).ToString()];
 
                     // Если символ "e" и предыдущий символ - "ь" или "ъ", заменяем на "ye"
-                    if (translit == "e" && i > 0 && (input[i - 1] == 'ь' || input[i - 1] == 'ъ'))
+                    if (translit == "e" && i > 0 && (input[i - 1] == 'ь' || input[i - 1] == 'ъ' || input[i - 1] == 'Ь' || input[i - 1] == 'Ъ'))
                     {
                         translit = "ye";
                     }
 
-                    output.Append(translit);
-
                     // Если символ был в верхнем регистре, делаем заменитель также в верхнем регистре
-                    if (char.IsUpper(c) && output.Length > 0)
+                    if (char.IsUpper(c))
                     {
-                        output[output.Length - 1] = char.ToUpper(output[output.Length - 1]);
+                        if (input[i] == 'Ь' || input[i] == 'Ъ')
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            translit = char.ToUpper(translit[0]) + translit.Substring(1);
+                        }
                     }
+
+                    output.Append(translit);
                 }
                 else
                 {
