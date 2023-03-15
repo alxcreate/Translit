@@ -14,7 +14,7 @@
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10,0,10,10">
             <TextBlock Text="Russian:" VerticalAlignment="Center" Margin="0,5,0,5"/>
             <TextBox x:Name="InputTextBox" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="95" MaxLength="1000" AcceptsReturn="True" Margin="0,0,0,0" TextChanged="InputTextBox_TextChanged"/>
-            <TextBlock Text="Transliteration" VerticalAlignment="Center" Margin="0,5,0,5"/>
+            <TextBlock Text="Transliteration:" VerticalAlignment="Center" Margin="0,5,0,5"/>
             <TextBox x:Name="OutputTextBox" Grid.Row="3" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="95" MaxLength="1000" AcceptsReturn="True" Margin="0,0,0,0" IsReadOnly="True"/>
         </StackPanel>
     </Grid>
